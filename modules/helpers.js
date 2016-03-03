@@ -1,5 +1,6 @@
 var
-    fs = require('fs');
+    fs = require('fs'),
+    child = require('child_process');
 
 module.exports = {
 

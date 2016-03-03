@@ -1,6 +1,6 @@
 {
   "name": "groots-cli",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "description": "Globalia Inc's everyday frontend stack",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,8 @@
   "bin": {
     "groots": "index.js"
   },
-  "devDependencies": {
+  "dependencies": {
+    "rimraf": "^2.5.2",
     "underscore": "^1.8.3",
     "yesno": "0.0.1"
   }
