@@ -70,10 +70,12 @@ module.exports = {
                             console.log(err);
                             process.exit(1);
 
-                        }
+                        } else {
 
-                        console.log(`Updated ${dirName} from ${url}.`);
-                        process.exit(1);
+                            console.log(`Updated ${dirName} from ${url}.`);
+                            process.exit(1);
+
+                        }
 
                     });
 
@@ -104,7 +106,7 @@ module.exports = {
 
                     console.log(`uninstalling...`);
 
-                    child.exec(`rimraf ${dirName}`, (err, stdout, stderr) => {
+                    child.exec(`cd ${dirName} && rimraf node_modules && rm -rf ${dirName}`, (err, stdout, stderr) => {
 
                         if (stdout !== '') { console.log(stdout); }
                         if (stderr !== '') { console.log(stderr); }
@@ -114,11 +116,12 @@ module.exports = {
                             console.log(err);
                             process.exit(1);
 
+                        } else {
+
+                            console.log(`${dirName} has been uninstalled.`);
+                            process.exit(1);
+
                         }
-
-                        console.log(`${dirName} has been uninstalled.`);
-                        process.exit(1);
-
                     });
 
                 } else {
